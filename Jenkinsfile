@@ -6,7 +6,7 @@ node {
       }     
       stage('Construire une image') {          
        
-            app = docker.build("najia/front-app")     
+            app = docker.build("bounajia/front-app")     
        }     
       stage('Image de test') {           
             app.inside {             
