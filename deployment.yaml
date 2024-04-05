@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: bounajia/frontend-project:tagname
+          image: bounajia/frontend:tagname
           ports:
             - containerPort: 3000  
   ---
