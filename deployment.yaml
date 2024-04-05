@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-deployment
+  name: frontend
 spec:
-  replicas: 1  # Number of desired replicas
+  replicas: 1  # Adjust the number of replicas as needed
   selector:
     matchLabels:
       app: frontend
@@ -13,21 +13,20 @@ spec:
         app: frontend
     spec:
       containers:
-        - name: frontend
-          image: bounajia/frontend-projet:tagname
-          ports:
-            - containerPort: 3000
-
+      - name: frontend
+        image: your-registry/your-react-app-image:tag
+        ports:
+        - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend-service
+  name: react-app-service
 spec:
   selector:
-    app: frontend
+    app: react-app
   ports:
-    - protocol: TCP
-      port: 80    # Expose port 80 on the service
-      targetPort: 3000   # Route traffic to port 3000 on the pods
-  type: ClusterIP   # Expose the service internally within the cluster
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: ClusterIP  # Exposes the service internally within the cluster
