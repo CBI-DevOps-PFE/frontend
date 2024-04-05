@@ -3,7 +3,7 @@ pipeline{
     environment{
         dockerImage=''
         registry='bounajia/frontend-projet:tagname'
-        registryCredential = 'bounajia_id'
+        registryCredential = 'dockerhub_id'
     }
     stages{
         stage('checkout'){
