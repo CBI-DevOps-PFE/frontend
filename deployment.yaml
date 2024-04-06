@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: react-app-deployment
 spec:
-  replicas: 3  # Adjust the number of replicas as needed
+  replicas: 3
   selector:
     matchLabels:
       app: react-app
@@ -13,20 +13,7 @@ spec:
         app: react-app
     spec:
       containers:
-      - name: react-app
-        image: bounajia/frontend-projet:tagname
-        ports:
-        - containerPort: 443  # Assuming your React app serves content over HTTPS
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: react-app-service
-spec:
-  selector:
-    app: react-app
-  ports:
-  - protocol: TCP
-    port: 443  # Assuming your React app serves content over HTTPS
-    targetPort: 443  # Assuming your React app serves content over HTTPS
-  type: ClusterIP  # Exposes the service internally within the cluster
+        - name: react-app-container
+          image: bounajia/frontend-projet:tagname
+          ports:
+            - containerPort: 3000  # Adjust the port as needed
