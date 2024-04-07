@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: react-app-container
-          image: bounajia/frontend-projet:tagname
+          image: bounajia/frontend-projet
           ports:
             - containerPort: 3000  # Adjust the port as needed
