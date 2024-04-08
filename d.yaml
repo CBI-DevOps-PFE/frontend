@@ -1,14 +1,4 @@
 
-kind: Deployment
-metadata:
-  name: frontend
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: frontend
-  template:
-    metadata:
       labels:
         app: frontend
     spec:
