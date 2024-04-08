@@ -1,20 +1,27 @@
 apiVersion: apps/v1
-kind: Deployment
+kind:
+     Deployment
 metadata:
-  name: frontend
+  name:
+      frontend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: frontend
+      app:
+      frontend
   template:
     metadata:
       labels:
-        app: frontend
+        app:
+        frontend
     spec:
       containers:
-        - name: frontend
-          image: bounajia/frontend-projet:tagname
+        - name:
+        frontend
+          image: 
+          bounajia/frontend-projet:tagname
           ports:
-            - containerPort: 3000  
+            - containerPort:
+            3000  
           
