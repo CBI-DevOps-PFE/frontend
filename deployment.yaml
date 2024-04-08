@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: react-app-deployment
+  name: frontend
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: react-app
+      app: frontend
   template:
     metadata:
       labels:
-        app: react-app
+        app: frontend
     spec:
       containers:
-        - name: react-app-container
-          image: bounajia/frontend-projet
+        - name: frontend
+          image: bounajia/frontend-projet:tagname
           ports:
-            - containerPort: 3000  # Adjust the port as needed
+            - containerPort: 3000  
