@@ -1,29 +1,19 @@
-Version api : apps/v1
-genre : Déploiement
-métadonnées :
-  nom : déploiement nginx
-  Étiquettes:
-    application : Web
-spécification :
-  sélecteur:
-    matchLabels :
-      application : Web
-  répliques : 5 
-  stratégie:
-    tapez : mise à jour continue
-  modèle:
-    métadonnées :
-      Étiquettes:
-        application : Web
-    spécification :
-      conteneurs :
-       — nom : nginx
-          image : nginx
-          ressources:
-            limites:
-              mémoire: 200Mi
-            demandes :
-              processeur : 100 m
-              mémoire: 200Mi
-          ports :
-           — port de conteneur : 80 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: bounajia/frontend-projet:tagname
+          ports:
+            - containerPort: 3000
