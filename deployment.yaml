@@ -26,9 +26,12 @@ kind: Service
 metadata:
   name: my-service
 spec:
+  type: NodePort
   selector:
     app.kubernetes.io/name: front
   ports:
     - protocol: TCP
       port: 3000
-      targetPort: 3000 
+      targetPort: 3000
+      nodePort: 30100
+      
